@@ -1,0 +1,15 @@
+db:
+  adapter: sqlite3
+  database: db/data.sqlite3
+  pool: 10
+  timeout: 5000
+  reaping_frequency: 10
+
+log:
+  # DEBUG < INFO < WARN < ERROR < FATAL < UNKNOWN
+  development: DEBUG
+  production: ERROR
+
+csv:
+  path: '/opt/jail/home/updater'
+  #path: '/media/sed'

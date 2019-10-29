@@ -1,0 +1,41 @@
+
+<div class="col-md-12">
+  <p>
+    Presione el campo que desea cargar.
+  </p>
+
+  <div class="col-md-3">
+    <form action='/admin/usuarios/crear' method='post' class="row form">
+      <div class="form-group">
+        <label for="nombre">Nombre de usuario</label>
+        <input type="text" name="nombre" class="form-control input-lg enfocable" required autofocus
+          data-target="input[name='nombre']" data-teclado="alfanumerico"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="dni">Legajo (login)</label>
+        <input type="text" name="nro_documento" class="form-control input-lg enfocable" required
+          data-target="input[name='nro_documento']"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Código de acceso</label>
+        <input type="password" name="password" class="form-control input-lg enfocable" required
+          data-target="input[name='password']"
+        />
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-lg btn-success" data-disable-with="Enviando...">Guardar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-9">
+    <label>&nbsp;</label>
+
+    <div class="form-group teclado-contenedor softkeys--sm"></div>
+  </div>
+</div>

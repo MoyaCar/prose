@@ -1,0 +1,248 @@
+@font-face {
+  font-family: "BBVAWebFont";
+  src: url("/fonts/bbvaweb-light.eot"); /* IE9 Compat Modes */
+  src: url("/fonts/bbvaweb-light.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/bbvaweb-light.woff") format("woff"),
+    /* Pretty Modern Browsers */ url("/fonts/bbvaweb-light.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */ url("/fonts/bbvaweb-light.svg") format("svg"); /* Legacy iOS */
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  /* Fuente Custom */
+  font-family: "BBVAWebFont", Fallback, sans-serif;
+
+  /* Deshabilitar la selección de texto en la página */
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+
+  /* Aumentar texto default */
+  font-size: 15px;
+}
+
+.btn-pull-down {
+  padding-top: 270px;
+}
+
+.bbva-banner {
+  background-color: rgb(28, 28, 77);
+}
+
+.btn.btn-square {
+  border-radius: 0;
+}
+
+.banner {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.white-text {
+  color: white;
+  padding-top: 40px;
+}
+
+.white {
+  color: white;
+}
+
+.margin {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.bbva {
+  background-image: url("/img/bg.jpg");
+}
+
+.btn-xlarge {
+  padding: 18px 60px;
+  font-size: 32px;
+  line-height: normal;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.btn-info,
+.btn-info:hover,
+.btn-info:active,
+.btn-info:visited {
+  background-color: rgb(17, 14, 65) !important;
+  border-color: rgb(17, 21, 75) !important;
+}
+
+.btn-success,
+.btn-success:hover,
+.btn-success:active,
+.btn-success:visited {
+  background-color: rgb(72, 141, 129) !important;
+  border-color: rgb(72, 141, 129) !important;
+}
+
+.header {
+  margin-bottom: 20px;
+  padding-right: 15px;
+}
+
+.header .btn-group {
+  padding-top: 26px;
+}
+
+.header .logo {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+.header .menu-superior {
+  margin-right: 15px;
+}
+
+.principal {
+  margin: auto 8%;
+  text-align: center;
+}
+
+.principal form label {
+  text-align: left;
+}
+
+.dropdown-menu {
+  /* Hacer que el dropdown aparezca bien a la izquierda */
+  left: -100px;
+  font-size: 1em;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.lead {
+  font-size: 1.5em;
+}
+
+.btn-lg {
+  font-size: 1em;
+}
+
+/* Algunos botones, como los de input groups, necesitan el default */
+.btn-lg-default {
+  font-size: 18px;
+}
+
+.input-lg {
+  font-size: 1em;
+}
+
+.teclado {
+  text-align: left;
+
+  /* Centrar el teclado dentro de su div */
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a.btn.lateral {
+  width: 100%;
+}
+
+/* Dejar bordes internos solamente */
+.table-bordered {
+  border-width: 0;
+}
+
+.controles {
+  text-align: right;
+}
+
+.softkeys__btn {
+  padding: 0 1.5em;
+  line-height: 3.5em;
+  font-size: 21px;
+}
+
+.softkeys__btn--space {
+  width: 19.25em;
+  font-size: 21px;
+}
+
+.teclado-modal .softkeys__btn {
+  padding: 0 1em;
+  line-height: 3em;
+  font-size: 15px;
+}
+
+.teclado-modal .softkeys__btn--space {
+  width: 19.25em;
+  font-size: 15px;
+}
+
+.softkeys--sm .softkeys__btn {
+  padding: 0 1em;
+  line-height: 3em;
+  font-size: 15px;
+}
+
+.softkeys--sm .softkeys__btn--space {
+  width: 19.25em;
+  font-size: 15px;
+}
+
+/* El selector de tipo de documento */
+select[name="tipo"] {
+  margin-top: 0.5em;
+}
+
+/* Agrandar los botones de paginación (estilos de btn-lg) */
+.pagination > li > a {
+  font-size: 1em;
+  padding: 10px 16px;
+  line-height: 1.3333333;
+}
+
+.codigo-error {
+  position: fixed;
+  bottom: 0;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+/* Fixes para los estilos del layout de tablas */
+.dataTables_info {
+  font-size: smaller;
+  text-align: left;
+}
+
+.dataTables_paginate {
+  text-align: left !important;
+}
+
+.fondo {
+  position: fixed;
+  bottom: 0;
+}
+
+/* Aumentar el ancho default del modal */
+.modal-lg {
+  width: 90%;
+}
+
+.modal-dialog {
+  margin-top: 0;
+}
+
+.alert {
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  z-index: 999;
+  margin-top: -25px;
+}

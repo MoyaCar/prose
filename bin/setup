@@ -1,0 +1,17 @@
+#!/bin/bash
+# Configura la base de datos inicial para la app
+
+# Para usar rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# Ir al directorio del repo
+pushd "$( cd "$( dirname `dirname "${BASH_SOURCE[0]}"` )" && pwd )"
+
+# Borrar la base de datos si existe
+rm -f db/data.sqlite3
+# Crear la base de datos y tablas
+rake migrate
+
+# Volver a donde estábamos
+popd

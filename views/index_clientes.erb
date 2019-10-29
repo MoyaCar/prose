@@ -1,0 +1,96 @@
+
+<div class="col-md-10">
+  <table class="table table-bordered table-striped table-condensed text-left data-table-clientes">
+    <thead>
+      <tr>
+        <th style="display: none;">Proveedor</th>
+        <th class="col-md-5">Nombre</th>
+        <th class="col-md-2">Doc.</th>
+        <th class="col-md-2">Estado</th>
+        <th class="col-md-2">Fecha</th>
+        <th class="controles col-md-1"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% prefijo_nro_proveedor = Configuracion.prefijo_nro_proveedor %>
+      <% tarjetas.each do |t| %>
+        <% tarjeta = TarjetaDecorator.new(t, prefijo_nro_proveedor) %>
+        <tr>
+          <td class="col-md-2" style="display: none;" data-filter="<%= tarjeta.codigo_de_barras %>"><%= tarjeta.nro_proveedor %></td>
+          <td class="col-md-5"><%= tarjeta.nombre %></td>
+          <td class="col-md-2"><%= tarjeta.nro_documento %></td>
+          <td class="col-md-2"><%= tarjeta.estado %></td>
+          <td class="col-md-2">
+              <%= with_time_zone(tarjeta.sobre.updated_at).strftime("%d/%m/%Y %H:%M") %>
+          </td>
+          <td class="controles col-md-1">
+            
+            <%# Si el sobre está, podemos extraerlo %>
+            <% if tarjeta.presente? %>
+              <a data-method="post" class="btn btn-danger btn-lg bloqueador capturar-pagina" href="/admin/clientes/<%= tarjeta.sobre_id %>/extraer" role="button" rel="nofollow" data-disable-with="...">
+                <i class="glyphicon glyphicon-download-alt"></i>
+              </a>
+            <%# Si no está, podemos cargarlo %>
+            <% elsif tarjeta.cargable? %>
+              <a data-method="post" class="btn btn-primary btn-lg bloqueador capturar-pagina" href="/admin/clientes/<%= tarjeta.sobre_id %>/cargar" role="button" rel="nofollow" data-disable-with="...">
+                <i class="glyphicon glyphicon-envelope"></i>
+              </a>
+            <%# A menos que haya sido entregado a un cliente %>
+            <% else %>
+                <button disabled class="btn btn-success btn-lg" role="button" rel="nofollow">
+                  <i class="glyphicon glyphicon-ok"></i>
+                </button>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+          <th style="display: none;"></th>
+          <th></th>
+          <th></th>
+          <th>Estado</th>
+          <th></th>
+          <th></th>
+      </tr>
+  </tfoot>
+  </table>
+</div>
+
+<div class="col-md-2">
+  <div class="form-group">
+    <div class="input-group">
+      <input type="text" name="filtro" class="filtro form-control input-lg enfocable" autofocus
+         placeholder="Buscar..."
+         data-target="input[name='filtro']"/>
+
+      <span class="input-group-btn">
+        <button class="btn btn-default btn-lg btn-lg-default" type="button" data-toggle="modal" data-target=".teclado-modal-container">AN</button>
+      </span>
+    </div>
+  </div>
+
+  <%# Modal con teclado alfanumérico %>
+  <div class="modal fade teclado-modal-container" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close btn-lg" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Búsqueda alfanumérica</h4>
+        </div>
+
+        <div class="modal-body">
+          <div class="form-group">
+            <div class="teclado-modal"></div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

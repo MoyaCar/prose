@@ -1,0 +1,32 @@
+<div class="col-md-12">
+  <form action='/dni' method='post' class="row form">
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8 form-group">
+        <input type="text" name="dni" class="form-control input-lg enfocable" required autofocus
+          data-target="input[name='dni']"
+          autocomplete="off"
+        />
+        <select name="tipo" class="form-control input-lg">
+          <% Novedad::DOCUMENTOS.each do |tipo, nombre| %>
+            <option <%= seleccionado(tipo) %> value="<%= tipo %>">
+              <%= nombre %>
+            </option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2 form-group">
+        <div class="btn-pull-down">
+          <a onclick="history.back(-1)" class="btn btn-info btn-lg" data-target='#' href="#">Volver</a>
+        </div>
+      </div>
+      <div class="col-sm-8 form-group teclado-contenedor"></div>
+      <div class="col-sm-2 form-group ">
+        <div class="btn-pull-down">
+          <button type="submit" class="btn btn-lg btn-success" data-disable-with="Enviando...">Continuar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,43 @@
+
+<div class="col-md-9">
+  <table class="table table-bordered table-striped table-condensed text-left data-table">
+    <thead>
+      <tr>
+        <th class="col-md-8">Nombre</th>
+        <th class="col-md-2">Legajo</th>
+        <th class="controles col-md-2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% usuarios.each do |usuario| %>
+        <tr>
+          <td class="col-md-8"><%= usuario.nombre %></td>
+          <td class="col-md-2"><%= usuario.nro_documento %></td>
+          <td class="controles col-md-2">
+            <a class="btn btn-primary btn-lg bloqueador capturar-pagina" href="/admin/usuarios/<%= usuario.id %>/editar" role="button" data-disable-with="...">
+              <i class="glyphicon glyphicon-edit"></i>
+            </a>
+
+            <a data-method="delete" class="btn btn-danger btn-lg bloqueador capturar-pagina" href="/admin/usuarios/<%= usuario.id %>/eliminar" role="button" rel="nofollow" data-disable-with="...">
+              <i class="glyphicon glyphicon-remove"></i>
+            </a>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="col-md-3">
+  <div class="form-group">
+    <input type="text" name="filtro" class="filtro form-control input-lg enfocable" placeholder="Buscar..." autofocus data-target="input[name='filtro']"/>
+  </div>
+
+  <div class="form-group teclado-contenedor softkeys--sm"></div>
+
+  <a class="btn btn-success btn-lg lateral" href="/admin/usuarios/nuevo" role="button">
+    <i class="glyphicon glyphicon-plus"></i>
+    Nuevo Usuario
+  </a>
+</div>

@@ -1,0 +1,40 @@
+<div class="header clearfix">
+    <% unless defined?(error) %>
+      <nav class="menu-superior">
+       <% if admin %>
+        <ul class="nav  pull-right">
+          <div class="btn-group">
+            
+              <a onclick="history.back(-1)" class="btn btn-info btn-lg" data-target='#' href="#">Volver</a>
+            
+          </div>
+
+          <div class="btn-group">
+            <a class="<%= clase_para_nav '/' %> btn-info" data-target='#' href="/">Inicio</a>
+
+            
+          </div>
+          <% if admin %>
+          <div class="btn-group">
+            <button type="button" class="btn btn-info btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Opc
+            </button>
+            <ul class="dropdown-menu">
+              <li><a data-target='#' href="/admin/clientes">Carga de Clientes</a></li>
+              <li><a data-target='#' href="/admin/usuarios">Carga de Usuarios</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a data-target='#' href="/admin/logs">Auditoría</a></li>
+              <li><a class="bloqueador-confirm" data-target='#' href="/admin/vaciado_logico">Vaciado Lógico</a></li>
+              <li><a data-target='#' href="#">Mantenimiento</a></li>
+              <li><a data-target='#' href="#">Autoinventario</a></li>
+              <li><a class="bloqueador" data-target='#' href="/admin/extraccion_directa" role="button" rel="nofollow" data-disable-with="...">Extracción Directa</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a data-target='#' href="/admin/panel">Panel</a></li>
+            </ul>
+          </div>
+        <% end %>
+        </ul>
+        <% end %>
+      </nav>
+    <% end %>
+  </div>

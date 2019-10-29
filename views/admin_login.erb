@@ -1,0 +1,30 @@
+<div class="col-md-12">
+
+  <form action='/admin-login' method='post' class="row form">
+    <div class="col-sm-offset-2 col-sm-8 form-group">
+      <input type="text" name="legajo" class="form-control input-lg enfocable" required autofocus
+        data-target="input[name='legajo']"
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="col-sm-offset-2 col-sm-8 form-group">
+      <input type="password" name="codigo" class="form-control input-lg enfocable" required autofocus
+        data-target="input[name='codigo']"
+        autocomplete="new-password"
+        />
+    </div>
+
+    <div class="col-sm-offset-2 col-sm-8 form-group teclado-contenedor"></div>
+
+
+    <div class="row">
+        <div class="col-sm-6 form-group pull-right">
+            <button type="submit" class="btn btn-lg btn-success" data-disable-with="Enviando...">Siguiente</button>
+          </div>
+        <div class="col-sm-6 form-group pull-left">
+            <a onclick="history.back(-1)" class="btn btn-info btn-lg" data-target='#' href="#">Volver</a>
+        </div>
+    </div>
+  </form>
+</div>

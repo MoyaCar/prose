@@ -1,0 +1,38 @@
+
+<div class="col-md-12">
+  <div class="col-md-3">
+    <p>&nbsp;</p>
+
+    <form action='/admin/configurar' method='post' class="row form">
+      <div class="form-group">
+        <label for="nombre_archivo_novedades">Nombre del archivo de novedades</label>
+        <input type="text" name="nombre_archivo_novedades" class="form-control input-lg enfocable"
+          required autofocus
+          value="<%= config.nombre_archivo_novedades %>"
+          data-target="input[name='nombre_archivo_novedades']"
+          data-teclado="alfanumerico"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="prefijo_nro_proveedor">Prefijo del número de proveedor</label>
+        <input type="text" name="prefijo_nro_proveedor" class="form-control input-lg enfocable"
+          required
+          value="<%= config.prefijo_nro_proveedor %>"
+          data-target="input[name='prefijo_nro_proveedor']"
+          data-teclado="alfanumerico"
+        />
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-lg btn-success" data-disable-with="Enviando...">Guardar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-9">
+    <label>&nbsp;</label>
+
+    <div class="form-group teclado-contenedor softkeys--sm"></div>
+  </div>
+</div>
